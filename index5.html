@@ -8,19 +8,80 @@
   <body>
     <style>
       body {
-        margin: 0; /* Removes default margin */
+        margin: 0;
+        padding: 0;
+background: linear-gradient(135deg, #6a11cb, #2575fc);
+        color: white;
+        height: 100vh;
         display: flex;
-        justify-content: center; /* Center horizontally */
-        align-items: center; /* Center vertically */
-        height: 100vh; /* Full height of the iframe */
-        background-color: darkgray;
-        overflow: hidden;
+        align-items: center;
+        justify-content: center;
+        font-family: sans-serif;
       }
-      .baner {
-        width: 100%; /* Makes the image take up the full width of the frame */
-        object-fit: cover;
+      .animation_text {
+        font-size: 30px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        min-width: 288px;
+      }
+      .animation_text span {
+        display: inline-block;
+        white-space: pre;
+        color: #ff7f50; /* Set color for dynamic text */
+      }
+      .cursor {
+        display: inline-block;
+        width: 2px;
+        height: 1.2em;
+        background-color: #ff7f50;
+        margin-left: 2px;
+        animation: blink 0.8s infinite;
+      }
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
       }
     </style>
-    <img src="Source/photo/ankor1.jpeg" alt="banner" class="baner" />
+  </head>
+  <body>
+    <div class="animation_text">
+      Hello, I am a <span id="dynamicText"></span><div class="cursor"></div>
+    </div>
+    <script>
+      const textArray = ["Student", "Programmer" , "Designer" , "Developer"];
+      let index = 0;
+      let charIndex = 0;
+      const typingSpeed = 100;
+      const erasingSpeed = 50;
+      const delayBetweenWords = 2000;
+      const dynamicText = document.getElementById("dynamicText");
+
+      function type() {
+        if (charIndex < textArray[index].length) {
+          dynamicText.textContent += textArray[index].charAt(charIndex);
+          charIndex++;
+          setTimeout(type, typingSpeed);
+        } else {
+          dynamicText.textContent += " "; // Add a space after typing the word
+          setTimeout(erase, delayBetweenWords);
+        }
+      }
+
+      function erase() {
+        if (charIndex > 0) {
+          dynamicText.textContent = textArray[index].substring(0, charIndex - 1) + " "; // Add a space during erasing
+          charIndex--;
+          setTimeout(erase, erasingSpeed);
+        } else {
+          index = (index + 1) % textArray.length;
+          setTimeout(type, typingSpeed + 500);
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(type, delayBetweenWords);
+      });
+    </script>
   </body>
 </html>
