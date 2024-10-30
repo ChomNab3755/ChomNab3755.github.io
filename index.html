@@ -5,19 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cam-Provinces</title>
     <link rel="icon" type="image/x-icon" href="./Source/photo/123.ico" />
+    <script>
+      function checkWidth() {
+        var item2Frame = document.getElementsByName("menu")[0]; // Sidebar
+        var mainFrame = document.getElementsByName("main")[0]; // Main content
+
+        if (window.innerWidth <= 576) {
+          // Hide the sidebar
+          item2Frame.style.display = "none"; // Hide the sidebar frame
+          // Update the frameset to fill the main content area
+          document.getElementsByTagName("frameset")[1].cols = "0,*"; // Set sidebar to 0 and main to full width
+
+          // Get the latest section from item3
+          try {
+            var latestSection =
+              mainFrame.contentWindow.document.querySelector(".latest");
+
+            if (latestSection) {
+              // Open the main frame's document and display the latest section
+              mainFrame.contentWindow.document.open();
+              mainFrame.contentWindow.document.write(
+                "<html><body>" + latestSection.innerHTML + "</body></html>"
+              );
+              mainFrame.contentWindow.document.close();
+            }
+          } catch (e) {
+            console.error("Error accessing main frame content:", e);
+          }
+        } else {
+          // Show the sidebar again
+          item2Frame.style.display = ""; // Show the sidebar frame
+          item2Frame.src = "manu.html"; // Restore original content of the sidebar
+          // Reset the frameset configuration
+          document.getElementsByTagName("frameset")[1].cols = "15%,65%"; // Restore original cols
+        }
+      }
+
+      // Check width on load
+      window.onload = checkWidth;
+      // Check width on resize
+      window.onresize = checkWidth;
+    </script>
   </head>
   <frameset rows="15%,*,5%" frameborder="0" border="0" framespacing="0">
-    <frame src="index5.html" name="top" frameborder="0" />
+    <frame src="index.html" name="top" frameborder="0" />
     <frameset cols="15%,65%" frameborder="0" border="0" framespacing="0">
-      <frame src="manu.html" name="menu" frameborder="0" />
+      <frame src="manu.html" name="menu" frameborder="0" class="item2" />
       <frame
-        src="camprovinces.html"
-        style="display: center; justify-content: center"
+        src="./project/camprovinces.html"
         name="main"
         frameborder="0"
+        id="item3"
       />
     </frameset>
-    <frame src="footer.html" name="menu" frameborder="0" />
+    <frame src="footer.html" name="footer" frameborder="0" id="item1" />
   </frameset>
   <body></body>
 </html>
