@@ -7,6 +7,8 @@ body {
 .title {
     text-align: center;
     font-weight: bold;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+
 }
 
 .cam {
@@ -160,7 +162,7 @@ body {
 }
 
 .bar2 {
-    background-color: #2F3C7E;
+background: linear-gradient(135deg, #6a11cb, #2575fc);
 }
 
 .bar4 {
@@ -182,7 +184,7 @@ input[type="text"] {
 
 .text5 {
     font-family: khmer os battambang;
-    background-color: #2F3C7E;
+background: linear-gradient(135deg, #6a11cb, #2575fc);
     color: white;
 }
 
