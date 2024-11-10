@@ -8,7 +8,6 @@ body {
     text-align: center;
     font-weight: bold;
     background: linear-gradient(135deg, #6a11cb, #2575fc);
-
 }
 
 .cam {
@@ -43,9 +42,9 @@ body {
 .dropdown {
     position: relative;
     display: inline-block;
-    flex: 1 1 200px;
     /* base size and responsive */
     margin-left: 20px;
+
 }
 
 .dropbtn {
@@ -64,6 +63,11 @@ body {
     font-family: khmer os battambang;
     flex: 1 1 200px;
     /* base size and responsive */
+}
+
+.top_bar {
+    display: flex;
+    justify-content: space-between;
 }
 
 .dropdown-content {
@@ -165,11 +169,6 @@ body {
 background: linear-gradient(135deg, #6a11cb, #2575fc);
 }
 
-.bar4 {
-    display: flex;
-    align-items: center;
-    /* Center items vertically */
-}
 
 input[type="text"] {
     padding: 5px;
@@ -214,6 +213,7 @@ background: linear-gradient(135deg, #6a11cb, #2575fc);
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
+    width: 250px;
 }
 
 .image3 {
@@ -224,7 +224,7 @@ background: linear-gradient(135deg, #6a11cb, #2575fc);
     -o-border-radius: 10px;
 }
       @media (max-width:575px)  {
-              .body {
+        body {
         padding: 10px;
     }
     .bar4 {
@@ -246,7 +246,7 @@ background: linear-gradient(135deg, #6a11cb, #2575fc);
         /* Full width dropdown */
     }
     .dropbtn {
-        width: 100%;
+        margin-left: 10px;
         /* Full width button */
         padding: 10px;
         /* Increase padding */
@@ -276,12 +276,11 @@ background: linear-gradient(135deg, #6a11cb, #2575fc);
         /* Full width for images */
         padding: 5px;
     }
-        .image1 {
+    .image1 {
     display: flex;
     /*Centervertically*/
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 10px;
     }
 
     .item {
