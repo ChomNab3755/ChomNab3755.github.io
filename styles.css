@@ -223,7 +223,10 @@ background: linear-gradient(135deg, #6a11cb, #2575fc);
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 }
-@media (max-witdth: 650px) {
+      @media (max-width:575px)  {
+              .body {
+        padding: 10px;
+    }
     .bar4 {
         flex-direction: column;
         /* Stack items vertically */
@@ -272,9 +275,6 @@ background: linear-gradient(135deg, #6a11cb, #2575fc);
         width: 100%;
         /* Full width for images */
         padding: 5px;
-    }
-    .body {
-        padding: 10px;
     }
         .image1 {
     display: flex;
