@@ -1,7 +1,7 @@
 body {
     margin: 0px;
     width: 100%;
-    line-height: 1.6;
+
 }
 
 .title {
@@ -9,15 +9,22 @@ body {
     font-weight: bold;
     background: linear-gradient(135deg, #6a11cb, #2575fc);
 }
+.title p {
+    display: flex;
+    justify-content: center;
+}
 
 .cam {
     font-family: khmer os battambang;
     font-size: 18px;
     margin-bottom: 0px;
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.Cam {
+.Cam  {
     font-family: khmer os battambang;
     margin-top: 0px;
     color: white;
@@ -89,6 +96,7 @@ body {
     text-decoration: none;
     display: block;
     transition: background-color 0.3s;
+    margin-left: 10px;
 
 }
 
@@ -223,16 +231,15 @@ background: linear-gradient(135deg, #6a11cb, #2575fc);
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 }
+    p {
+        text-align: justify;
+    }
       @media (max-width:575px)  {
         body {
-        padding: 10px;
+        margin: 0px;
+        line-height: 1.6;
     }
-    .bar4 {
-        flex-direction: column;
-        /* Stack items vertically */
-        width: 100%;
-        /* Full width */
-    }
+
     .text {
         margin-right: 0;
         /* Remove margin for mobile */
@@ -251,28 +258,16 @@ background: linear-gradient(135deg, #6a11cb, #2575fc);
         padding: 10px;
         /* Increase padding */
     }
-    .search {
-        flex-direction: column;
-        /* Stack search input and button */
-        align-items: stretch;
-        /* Stretch to full width */
-    }
-    .search input {
-        margin-bottom: 10px;
-        /* Space between input and button */
-        width: 100%;
-        /* Full width input */
-    }
-    .search button {
-        width: 100%;
-        /* Full width button */
+    .dropdown-content {
+        margin-left: 10px;
+        width: 50px;
     }
     .photo-gallery {
         flex-direction: column;
         /* Stack images vertically */
     }
     .image1 {
-        width: 100%;
+
         /* Full width for images */
         padding: 5px;
     }
@@ -285,5 +280,10 @@ background: linear-gradient(135deg, #6a11cb, #2575fc);
 
     .item {
         margin-top: 10px;
+    }
+    p {
+        text-align: justify;
+        margin-right: 5px;
+        margin-left: 5px;
     }
 }
